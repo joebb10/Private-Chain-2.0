@@ -1,0 +1,25 @@
+// Install this
+brew tap ethereum/ethereum
+brew install ethereum
+
+//For creating a new account
+geth account new --datadir data
+
+//Creating genesis block
+geth init --datadir data genesis.json
+
+//Creating your networkid(If you have any question about it or about brownie just search "brownie docs" on google.
+brownie add networkid <networkid>
+
+// running the chain in your own network(Or in some other network like ethereum, rinkeby, etc.
+geth --datadir data --networkid 15(the 15th can be change for any networkid you would like)
+
+//Start mine
+geth --mine --rpc --networkid 1999 --datadir /path/to/data/dir
+
+geth --datadir /path/to/data/dir attach ipc:/path/to/data/dir/geth.ipc
+
+//Chain interaction
+After you've done all of this steps on terminal, you can start interacting with the chain:
+1- eth.account// for see the accounts
+2- eth.getBalance("<wallet-address>")
